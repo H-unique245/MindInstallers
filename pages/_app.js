@@ -1,4 +1,3 @@
-
 import { ChakraProvider } from "@chakra-ui/react";
 import Navbar from "../Component/Navabar";
 import Footer from "../Component/Footer";
