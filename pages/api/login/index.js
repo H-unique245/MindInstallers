@@ -4,7 +4,7 @@ import { User } from "../../../modals/auth/authmodel";
 import jwt from "jsonwebtoken";
 
 export default async function handler(req, res) {
-
+  const { method } = req;
 
   const { email, password } = req.body;
   console.log(email,password);
@@ -18,8 +18,8 @@ export default async function handler(req, res) {
   if (method === "POST") {
 try{
   
-  const user = await User.findOne({ email });
-
+  const user = await User.findOne({ email,password });
+console.log(user);
   if (!user) {
     return res.status(404).send({ message: "User not found" });
   }
