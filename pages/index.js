@@ -13,6 +13,7 @@ import Profesion from '../Component/HomePageComp/Profesion'
 export default function Home() {
   return (
        <>
+       <Navbar />
        <Box>
        <HeroSection />
         <Profesion/>
