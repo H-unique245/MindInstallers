@@ -21,13 +21,14 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+ 
 
-export default function Navbar() {
+export default function Navbar(){
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
-      <Flex
+    <Box border={"2px solid red"} >
+      <Flex  
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
@@ -88,6 +89,12 @@ export default function Navbar() {
             }}>
             Sign Up
           </Button>
+
+          {/* <Button
+            >
+            <Theme/>
+          </Button> */}
+
         </Stack>
       </Flex>
 
@@ -251,7 +258,7 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: 'Inspiration',
+    label: 'Teacher',
     children: [
       {
         label: 'Explore Design Work',
@@ -266,7 +273,7 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: 'Find Work',
+    label: 'Student',
     children: [
       {
         label: 'Job Board',
@@ -281,11 +288,40 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: 'Learn Design',
+    label: 'About',
     href: '#',
   },
   {
-    label: 'Hire Designers',
+    label: 'Courses',
     href: '#',
   },
-];
+]
+
+
+// import {  ButtonProps,  useColorMode } from '@chakra-ui/react';
+// import { BsSun, BsMoonStarsFill } from 'react-icons/bs';
+
+//   function Theme({children}) {
+//   const { colorMode, toggleColorMode } = useColorMode();
+//   return (
+//     /**
+//      * Ideally, only the button component should be used (without Flex).
+//      * Props compatible with <Button /> are supported.
+//      */
+//     <Flex h="100vh" justifyContent="center" alignItems="center">
+//       <Button 
+//         aria-label="Toggle Color Mode"
+//         onClick={toggleColorMode}
+//         _focus={{ boxShadow: 'none' }}
+//         w="fit-content"
+//         {...children}>
+//         {colorMode === 'light' ? <BsMoonStarsFill /> : <BsSun />}
+//       </Button>
+//     </Flex>
+//   );
+// }
+
+ 
+
+
+ 
