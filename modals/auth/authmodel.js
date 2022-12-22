@@ -21,6 +21,10 @@ const UserSchema = new Schema({
     enum: ["student", "teacher", "admin"],
     default: "student"
   },
+  gender: {
+    type: String,
+    enum: ["male", "female"]
+  },
   verify: {
     type: Boolean,
     default: false
