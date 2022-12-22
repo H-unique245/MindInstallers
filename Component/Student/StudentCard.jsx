@@ -23,10 +23,10 @@ import {
   Heading,
   Button,
 
-
+ 
 } from "@chakra-ui/react";
-
 import Link from 'next/link'
+
 import {
   FiCompass,
   FiStar,
@@ -34,21 +34,23 @@ import {
   FiBell,
   FiChevronDown,
 } from "react-icons/fi";
-import ForgotTeacher from "./ForgotTeacher";
 
+import Forgot from "../../pages/student/forgot";
 
+// import mi from "../../public/mi.jpeg"
 
 
 const LinkItems = [
-  { name: "Assignments", icon: FiCompass, url: "/teacher" },
-  { name: "Student List", icon: FiStar, url: "/teacher/teach" },
+    { name: "Assignments", icon: FiCompass, url: "/student" },
+    { name: "Student Details", icon: FiStar, url: "/student/card" },
 ];
 
-export default function Nav({
+export default function StudentCard({
   children,
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+ 
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
@@ -92,10 +94,9 @@ const SidebarContent = ({ onClose, ...rest }) => {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between"  >
-      <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
+        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
         <Image width={"90px"} src={"/mi.jpeg"}  />
         </Text>
-     
         <CloseButton
           display={{ base: "flex", md: "flex", lg: "none" }}
           onClick={onClose}
@@ -128,12 +129,11 @@ const NavItem = ({ icon, children, url }) => {
 
 
 const MobileNav = ({ onOpen, ...rest }) => {
-
-    const [isForgotTeacher, setIsForgotTeacher] = useState(false);
+    const [isForgot, setIsForgot] = useState(false);
 
     const handleForgot = () => {
-      setIsForgotTeacher(true);
-        console.log(isForgotTeacher,"helo")
+        setIsForgot(true);
+        console.log(isForgot,"helo")
     };
   return (
     <Flex
@@ -164,7 +164,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
     
       
       </Text>
-      <Heading style={{margin:"auto"}}  >Teachers Dashboard</Heading>
+      <Heading style={{margin:"auto"}}  >Student Dashboard</Heading>
       <Link href="/" style={{ textDecoration: "none" }}>
         <Flex
           align="center"
@@ -190,15 +190,13 @@ const MobileNav = ({ onOpen, ...rest }) => {
           aria-label="open menu"
           icon={<FiBell />}
         />
-
-<Button variant={"outline"} onClick={handleForgot} backgroundColor={"grey"} color={"black"}>
+        <Button variant={"outline"} onClick={handleForgot}>
           Change Password
         </Button>
-         {isForgotTeacher && (
-          <ForgotTeacher isFormOpen={isForgotTeacher} setIsFormOpen={setIsForgotTeacher} />
+        {isForgot && (
+          <Forgot isFormOpen={isForgot} setIsFormOpen={setIsForgot} />
         )}
-    
-      </HStack>
+</HStack>
     </Flex>
   );
 };
