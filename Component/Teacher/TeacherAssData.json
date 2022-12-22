@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "name": "Alex",
+        "status": true
+      
+    },
+    {
+        "id": 2,
+        "name": "Newton",
+        "status": true
+      
+    },
+    {
+        "id": 3,
+        "name": "charlee",
+        "status": true
+      
+    },
+    {
+        "id": 4,
+        "name": "robert",
+        "status": true
+        
+    },
+    {
+        "id": 5,
+        "name": "Devid",
+        "status": false
+        
+    },
+    {
+        "id": 6,
+        "name": "thomas",
+        "status": false
+        
+    },   {
+        "id": 7,
+        "name": "elon",
+        "status": true
+        
+    },   {
+        "id": 8,
+        "name": "mark",
+        "status": true
+        
+    }
+]
