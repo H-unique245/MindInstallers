@@ -27,7 +27,9 @@ export default function Navbar(){
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box border={"2px solid red"} >
+    <Box 
+    // border={"2px solid red"}
+     w="100%" pos="fixed" zIndex={2} >
       <Flex  
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
@@ -77,6 +79,7 @@ export default function Navbar(){
             href={'#'}>
             Sign In
           </Button>
+          <Link href='/signup' >
           <Button
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
@@ -89,6 +92,7 @@ export default function Navbar(){
             }}>
             Sign Up
           </Button>
+          </Link>
 
           {/* <Button
             >

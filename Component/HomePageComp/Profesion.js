@@ -4,14 +4,14 @@ import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
 
  const data =[
     {
-        src : "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+        src : "https://th.bing.com/th/id/OIP.tei9Vsc8styOGZ9nN0I3RAHaE8?pid=ImgDet&rs=1",
         title : "Become a Teacher",
         dis : "Teach what you love. Coursector gives you the tools to create a course",
         role : "Start Teaching"
     
      },
      {
-        src : "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+        src : "https://th.bing.com/th/id/OIP.IipLLln2LLXdAR73__xzSwHaE8?pid=ImgDet&rs=1",
         title : "Become a students",
         dis : "Teach what you love. Coursector gives you the tools to create a course",
         role : "Start Learning"
@@ -21,8 +21,8 @@ import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
 
   function Profesion() {
   return (
-    <Box p={4} border="2px solid yellow" >
-         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} 
+    <Box p={4} border="2px solid white" >
+         <SimpleGrid columns={{ base: 1, md: 1 , lg : 2 }} spacing={10} 
       //  border={{ base:"8px solid yellow",   md: '3px solid teal'   }}
           >
             {
@@ -37,12 +37,12 @@ import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
                     
                   >
                     <Image
-                     margin="auto"
+                    //  margin="auto"
                       objectFit='cover'
-                      borderRadius="50%"
-                      mt="-1px"
-                      maxW={{ base: '80%', sm: '30%' ,  md: '30%' }}
-                      maxH={{ base: '90%', sm: '100%' , md: '100%'  }}
+                    //    borderRadius="60%"
+                    maxW={{ base: '100%', sm: '200px' }}
+                    //   maxW={{ base: '200px',   md: '200px' }}
+                    //   maxH={{ base: '800px', sm: '100%' , md: '1000px'  }}
                       src={elem.src}
                       alt='Caffe Latte'
                     //   border={{ base:"8px solid yellow",   md: '3px solid teal'   }}
@@ -50,12 +50,14 @@ import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
                   
                     <Stack>
                       <CardBody>
-                        <Heading size='md'>
+                        <Heading size='lg'     >
                           {elem.title}  
                            
                           </Heading>
                   
-                        <Text py='2'>
+                        <Text marginTop="25px"
+                        //  border="1px solid red"  
+                          fontSize="20px" py='2' color="white">
                          {elem.dis}
                         </Text>
                       </CardBody>
