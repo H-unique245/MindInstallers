@@ -19,7 +19,6 @@ export default async function handler(req, res) {
 try{
   
   const user = await User.findOne({ email,password });
-console.log(user);
   if (!user) {
     return res.status(404).send({ message: "User not found" });
   }
@@ -34,6 +33,7 @@ console.log(user);
       id: user._id,
       email: user.email,
       password: user.password,
+      role: user.role
   
     },
     "BHKP",
