@@ -40,12 +40,6 @@ export default function SignIn(){
     e.preventDefault();
    
 
-    toast({
-      title: "Login Successfully",
-      status: "success",
-      duration: 1000,
-      isClosable: true,
-    });
 
     axios({
       method: "POST",

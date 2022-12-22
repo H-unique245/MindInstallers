@@ -13,7 +13,9 @@ import {
   Input,
   Stack,
   useColorModeValue,
+  useToast,
 } from "@chakra-ui/react";
+import axios from "axios";
 import { useState } from "react";
 // import React from "react";
 const initStudent={
@@ -22,6 +24,7 @@ const initStudent={
 }
 function Forgot({ isFormOpen, setIsFormOpen }) {
     const [student,setStudent]= useState(initStudent)
+    const toast = useToast();
   // const { isOpen, onOpen, onClose } = useDisclosure()
   const onClose = () => {
     setIsFormOpen(false);
@@ -32,9 +35,49 @@ const handleChange=(e)=>{
   setStudent({...student, [name]:value})
 }
 
-  const handleSubmit=()=>{
-    console.log(student)
-    console.log("check");
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    if(student.email==="" || student.password==="" ){
+    //    alert("Enter All Details Please!!");
+    
+       toast({
+        title: "Enter All Details Please!!",
+        status: "warning",
+        position: 'top',
+        duration: 1000,
+        isClosable: true,
+      });
+    }
+    else{
+        console.log(student)
+        axios({
+            method: "POST",
+            url: `http://localhost:3000/api/student/update`,
+            data: student,
+          }).then((res)=>{ 
+            if(res.status===201){
+          toast({
+            title: res.data,
+            status: "success",
+            position:'top',
+            duration: 1000,
+            isClosable: true,
+          });
+          setIsFormOpen(false);
+        //   console.log(res.data)
+        }
+        else{
+            console.log(res);
+            toast({
+                title: res.data,
+                status: "error",
+                position:'top',
+                duration: 1000,
+                isClosable: true,
+              });
+        }
+        })
+    }
   }
   return (
     <>
@@ -57,6 +100,7 @@ const handleChange=(e)=>{
               p={6}
               my={12}
             >
+                <form>
               <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
                 <Input
@@ -71,7 +115,8 @@ const handleChange=(e)=>{
               </FormControl>
               <Stack spacing={6}>
                 <Button
-                onClick={handleSubmit}
+                type="submt"
+                onClick={(e)=>handleSubmit(e)}
                   bg={"blue.400"}
                   color={"white"}
                   _hover={{
@@ -81,6 +126,7 @@ const handleChange=(e)=>{
                   Submit
                 </Button>
               </Stack>
+                </form>
             </Stack>
           </ModalBody>
           <ModalFooter>
