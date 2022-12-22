@@ -43,39 +43,36 @@ This project was built by a team of 4 developers in 5 Days.
 ### Team
 ___
  <ul>
-        <li><a href="https://github.com/furqan5921">Mohammad Furqan (Team Lead)</a></li>
-        <li> <a href="https://github.com/subhankarroy612">Subhankar Roy (Team Member)</a> </li>
-        <li><a href="https://github.com/JYOTIPM1999">Jyoti Prakash Mohapatra (Team Member)</a></li>
-        <li><a href="https://github.com/soumitra-dey">Soumitra Dey (Team Member)</a></li>
-        <li><a href="https://github.com/H-unique245">Hemant Aher (Team Member)</a></li>
+        <li><a href="https://github.com/pravin0428">Pravin Mohite</a></li>
+        <li> <a href="https://github.com/H-unique245">Hemant Aher</a> </li>
+        <li><a href="https://github.com/kedar05121998/kedar05121998">Kedar Pathak</a></li>
+        <li><a href="https://github.com/bishal00sharma">Bishal Sharma</a></li>
+        
   </ul>
   
 
-## Information about Cronometer 
+## Information about MGL(mind-installer learning hub) 
 
-<p> Cronometer nutrition tracking app provides you with everything you need to reach your health goals. It is a food journal that you keep daily. You can keep track of your daily caloric intake, as well as other factors like exercise.</p>
+<p>Be the creator of your success. saas base education website</p>
 
 ## Tech Stack
  - ### Frontend 
+   * Nextjs
    * HTML 5
-   * CSS 3
    * JavaScript
-   * React JS
    * Chakra UI
-   * Redux JS 
+ 
 
  - ### Backend
 
    * Node JS
-   * Express JS
-
+ 
  - ### Database
    * MongoDB
 
  - ### Other Tools and Libraries 
    * NPM
    * React Icons
-   * SMTP for sending email
    * Git
 
 
