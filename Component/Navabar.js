@@ -29,7 +29,8 @@ export default function Navbar(){
   return (
     <Box 
     // border={"2px solid red"}
-     w="100%" pos="fixed" zIndex={2} >
+      w="100%" pos="fixed" zIndex={2} 
+     >
       <Flex  
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
@@ -58,7 +59,7 @@ export default function Navbar(){
             textAlign={{ base: 'center', md: 'left' }}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
-            Logo
+            <img style={{width : "65px" , marginTop : "-10px"}} src="mi.jpeg" />
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -265,13 +266,13 @@ const NAV_ITEMS = [
     label: 'Teacher',
     children: [
       {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
+        label: 'Dashboard',
+        subLabel: 'Teacher Dashboard',
+        href: '/teacher',
       },
       {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
+        label: 'Addence Catlouge',
+        subLabel: 'sudent addence catlouge',
         href: '#',
       },
     ],
@@ -280,20 +281,20 @@ const NAV_ITEMS = [
     label: 'Student',
     children: [
       {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
+        label: 'Dashboard',
+        subLabel: 'Find your Schedule',
+        href: '/student',
       },
       {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
+        label: 'Assignment',
+        subLabel: 'Find your Assignment here',
         href: '#',
       },
     ],
   },
   {
     label: 'About',
-    href: '#',
+    href: '/about',
   },
   {
     label: 'Courses',
