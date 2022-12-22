@@ -8,15 +8,22 @@ import {
     Th,
     Td,
     TableCaption,
-    TableContainer
+    TableContainer,
+    Box,
+    Heading,
+    color
   } from '@chakra-ui/react'
 
-
-
+import data from "./TeacherAssData.json"
+import Link from 'next/link'
+import {BsLink45Deg} from "react-icons/Bs"
 const TeacherAss = () => {
+  // const {data1,setData}=useState([])
+  // console.log(data)
+
   return (
     <>
-    <heading>TeacherAss</heading>
+    <Heading marginLeft={"10rem"} color={"orange"} >Student Assignment Dashboard</Heading>
 
     <TableContainer>
 
@@ -27,29 +34,25 @@ const TeacherAss = () => {
         <Th>Student ID</Th>
         <Th>Student Name</Th>
         <Th>Assignment status</Th>
-        <Th>Assignment Submission Link</Th>
+      
        </Tr>
     </Thead>
-    <Tbody>
+    {data.map((item) => {
+          return (
+    <Tbody  key={item.id} >
       <Tr>
-        <Td isNumeric>id</Td>
-        <Td>name:-</Td>
-        <Td>Status</Td>
-        <Td>Link:-</Td>
+        <Td>{item.id}</Td>
+        <Td>{item.name}</Td>
+        <Td >{item.status===true?"Completed":"Pending"}</Td>
+      
+
+        
 
       </Tr>
-      {/* <Tr>
-        <Td>feet</Td>
-        <Td>centimetres (cm)</Td>
-        <Td isNumeric>30.48</Td>
-      </Tr>
-      <Tr>
-        <Td>yards</Td>
-        <Td>metres (m)</Td>
-        <Td isNumeric>0.91444</Td>
-      </Tr> */}
-    </Tbody>
     
+     </Tbody>
+    );
+  })}
   </Table>
 </TableContainer>
     

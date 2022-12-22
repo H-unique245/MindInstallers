@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import {
   IconButton,
   Avatar,
@@ -34,6 +34,7 @@ import {
   FiBell,
   FiChevronDown,
 } from "react-icons/fi";
+import ForgotTeacher from "./ForgotTeacher";
 
 
 
@@ -92,7 +93,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between"  >
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          {/* <Image src={Logo} /> */}
+          {/* <Image src={logo}  /> */}
         </Text>
         <CloseButton
           display={{ base: "flex", md: "flex", lg: "none" }}
@@ -126,6 +127,13 @@ const NavItem = ({ icon, children, url }) => {
 
 
 const MobileNav = ({ onOpen, ...rest }) => {
+
+    const [isForgotTeacher, setIsForgotTeacher] = useState(false);
+
+    const handleForgot = () => {
+      setIsForgotTeacher(true);
+        console.log(isForgotTeacher,"helo")
+    };
   return (
     <Flex
       ml={{ base: 0, md: 0, lg: 60 }}
@@ -181,61 +189,14 @@ const MobileNav = ({ onOpen, ...rest }) => {
           aria-label="open menu"
           icon={<FiBell />}
         />
-        <Flex alignItems={"center"}>
-          <Menu>
-            <MenuButton
-              py={2}
-              transition="all 0.3s"
-              _focus={{ boxShadow: "none" }}
-            >
-              <HStack>
-                <Avatar
-                  size={"sm"}
-                  src={
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fen%2Fsearch%3Fq%3Duser&psig=AOvVaw0cpuplRZEtGx8IGw7a1Bve&ust=1671308076412000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLDWu_L5_vsCFQAAAAAdAAAAABAE"
-                  }
-                />
-                <VStack
-                  display={{ base: "none", md: "flex" }}
-                  alignItems="flex-start"
-                  spacing="1px"
-                  ml="2"
-                >
-                  <Text fontSize="xs" color="gray.600">
-                  Teacher
-                  </Text>
-                </VStack>
-                <Box display={{ base: "none", md: "flex" }}>
-                  <FiChevronDown />
-                </Box>
-              </HStack>
-            </MenuButton>
-            <MenuList
-              bg={useColorModeValue("white", "gray.900")}
-              borderColor={useColorModeValue("gray.200", "gray.700")}
-            >
-              <MenuItem>
-                <Link href="/" style={{ textDecoration: "none" }}>
-                Students List
-                </Link>
-              </MenuItem>
-              <MenuItem>
-             
-                <Link href="/" style={{ textDecoration: "none" }}>
-                Assignments
-                </Link>
-            
-              </MenuItem>
 
-              <MenuDivider />
-              <MenuItem>
-                <Link href="/" style={{ textDecoration: "none" }}>
-                  Sign Out
-                </Link>
-              </MenuItem>
-            </MenuList>
-          </Menu>
-        </Flex>
+<Button variant={"outline"} onClick={handleForgot}>
+          Change Password
+        </Button>
+         {isForgotTeacher && (
+          <ForgotTeacher isFormOpen={isForgotTeacher} setIsFormOpen={setIsForgotTeacher} />
+        )}
+    
       </HStack>
     </Flex>
   );
