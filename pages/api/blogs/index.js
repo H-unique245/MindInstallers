@@ -1,12 +1,12 @@
 import { connect } from "../../../dbConnect";
-import { User } from "../../../modals/auth/authmodel";
+import { BlogModel } from "../../../modals/blogs/blogmodel";
 
 
 export default async function handler(req, res) {
   const { method } = req;
 
   // console.log(email,password);
-/// const data= useSelector((store)=>store.user)
+
   try {
     await connect();
   } catch (e) {
@@ -16,15 +16,9 @@ export default async function handler(req, res) {
   if (method === "GET"){
 try{
   
-  const user = await User.find({ role:"student" });
-// console.log(user);
-    
-//   const userRes= {
-//     name: user.name,
-//     email: user.password,
-//     role: user.role
-//   }
-    return res.status(200).send(user);
+  const blogList = await BlogModel.find();
+
+    return res.status(200).send(blogList);
 }
 catch(err){
   res.status(400).send({message:err.message});
