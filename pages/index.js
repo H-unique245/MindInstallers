@@ -1,7 +1,4 @@
- import Navbar from "../Component/Navabar";
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
+import Navbar from "../Component/Navabar";
 import HeroSection from "../Component/HomePageComp/HeroSection";
 import { Box , Text } from "@chakra-ui/react";
 import Profesion from "../Component/HomePageComp/Profesion";
@@ -21,7 +18,7 @@ export default function Home() {
       //  ml="70px" 
       
       textAlign="center"
-      textShadow="4px 7px 7px red"
+      textShadow="4px 7px 7px black"
        fontSize="30px" color="white" fontWeight="bold" >What our students have to say</Text>
         <OurStudents/>
       </Box>
