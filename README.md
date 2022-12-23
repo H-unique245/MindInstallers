@@ -1,42 +1,12 @@
 ### SCHOOL MANAGEMENT SYSTEM
-signup--> token ---> admin--> token- teacher->  --> name, email, password, exp
-                                    student --> ----> name, email, password
-login ->  username, password , ID()  ---> token.role-->email 
-  student
-auth--> admin. role-->  
-navbar-- > home , about, login/signup , assingmnt(upload) 
-student login
-   -- assingment upload
-   -- 
-
-student 
-
-  -- lecture seen /daily scheldule*
-  --- attendance seem
-   -- assignment upload
-
-teacher
-   -- assignment check
-   --- student list /  all attendance
-   -- notes  upload /lecture update
-   
-admin 
-  -- fee details
-  -- student data
-  -- teachers data
   
-  
-  
- 
 # Mind Installers [FitFinity]
 
 
 * [Click Here](https://mindinstaller.vercel.app/) to view the deployed website.
- <p align="center"><img  width="200" src="https://i.imgur.com/MNHIt59.jpeg"/img> </p>
+ <p align="center"><img  width="200" src="https://i.imgur.com/JQsf7ms.jpg"/img> </p>
 <p>
-This was a collaborative construct week project at Masai School.
-Goal behind the project was to create a full stack clone of the Cronometer website as close as possible to the original one with all the major functionalities of this website, such as  Authentication, Landing Page & Dashboard for tracking the nutritions.
-This project was built by a team of 4 developers in 5 Days. 
+ This is a competitive application created for the Masai Hackathon program. This SAAS web application is all about education platforms.
 </p>
 
 
@@ -81,11 +51,11 @@ ___
 __
 
    - ###Homepage 
-<img src="https://i.imgur.com/J4NKqlh.png" alt="homepage" />
+<img src="https://i.imgur.com/Z49kMD1.jpg" alt="homepage" />
 
 
-   - ###Support 
-<img src="https://i.imgur.com/sOCVm6Q.png" alt="suport" />
+   - ###About
+<img src="https://i.imgur.com/DWvwIaz.png" alt="suport" />
 
 
 
@@ -94,29 +64,27 @@ __
 
 
    - ###Login 
-<img src="https://i.imgur.com/iSm1buH.png" alt="login" />
+<img src="https://i.imgur.com/Lxj57XD.png" alt="login" />
 
 
 
    - ###Sign up 
-<img src="https://i.imgur.com/1imxoHn.png" alt="singup1" />
-<img src="https://i.imgur.com/L60YTQH.png" alt="singup2" />
+<img src="https://i.imgur.com/uKpmSSd.png" alt="singup1" />
+ 
 
 
 
    - ###Dashboard 
-<img src="https://i.imgur.com/Lj4hX2G.png" alt="dashboard" />
+<img src="https://i.imgur.com/F0BI1qZ.jpg" alt="dashboard" />
+<img src="https://i.imgur.com/F0BI1qZ.jpg" alt="dashboard" />
 
+    - ###Admin Page 
+<img src="https://i.imgur.com/4D64eel.png" alt="AD" />
+<img src="https://i.imgur.com/vuv8e5E.png" alt="AT" /> 
+<img src="https://i.imgur.com/yA21DPZ.png" alt="AS" /> 
+ 
 
-   - ###Diary 
-<img src="https://i.imgur.com/S9vddUS.png" alt="diary" />
-<img src="https://i.imgur.com/AYUMAnA.png" alt="diary" />
-
-
-
-   - ###Plans 
-<img src="https://i.imgur.com/VODu1TB.png" alt="plans1" />
-<img src="https://i.imgur.com/MnnLKc0.png" alt="plans2" />
+ 
 
 
 
