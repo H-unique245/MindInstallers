@@ -60,7 +60,7 @@ const TeacherList = () => {
               <Th color="teal" fontSize="18">Teacher Name</Th>
               <Th color="teal" fontSize="18">Subject</Th>
               <Th color="teal" fontSize="18">Salary</Th>
-              <Th color="teal" fontSize="18">Employee id</Th>
+              <Th color="teal" fontSize="18">Salary Paid</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -69,12 +69,12 @@ const TeacherList = () => {
                 <Tr>
                 <Td>{item.email}</Td>
                 <Td>{item.name}</Td>
-                <Td>-</Td>
-                <Td>-</Td>
-                <Td>-</Td>
+                <Td></Td>
+                <Td> ₹{Math.floor(Math.random() * 60000) + 40000}</Td>
+                <Td>{item.verify?"Given":"Not Given"}</Td>
                 <Td> <Button colorScheme="red" onClick={()=> teaDelete(item._id) }> Delete</Button> </Td>
                 {/* <Td> <Button colorScheme="telegram">View Details</Button> </Td> */}
-                <Td> <UpdateTeacher id={item._id} changeMe={changeMe} email={item.email} name={item.name} /> </Td>
+                <Td> <UpdateTeacher id={item._id} paid={item.verify} changeMe={changeMe} email={item.email} name={item.name} /> </Td>
               </Tr>
               ))
             }

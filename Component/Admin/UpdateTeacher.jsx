@@ -14,15 +14,17 @@ import {
     useToast,
     Flex,
     FormLabel,
+    Select,
   } from '@chakra-ui/react'
 import { useState } from 'react';
 
   
-export default function UpdateTeacher( { id,email,name,changeMe } ) {
+export default function UpdateTeacher( { id,email,name,changeMe,paid } ) {
 
   const initialState = {
     email:email,
-    name:name
+    name:name,
+    verify:paid
 } ;
 
 
@@ -90,7 +92,16 @@ export default function UpdateTeacher( { id,email,name,changeMe } ) {
             <FormLabel color="red.300">Email</FormLabel>
             <Input mb="3"  placeholder='Email' borderBottom="2px solid orange" value={formstate.email} onChange={handleChange} type="text" name="email" />
     
-            
+            <Select mt="5"  mb="3" borderBottom="2px solid orange"
+                placeholder="Select Fees"
+                name="verify"
+                value={formstate.verify}
+                onChange={handleChange}
+              >
+                <option value="true">Given</option>
+                <option value="false">Not Given</option>
+              </Select>
+
               <Flex justifyContent="space-between">
                    <Input  type="submit" _hover={{cursor:"pointer"}}  bg="twitter.600" mt="7"  color="white" placeholder='Submit form' />
                    <Button ml="2"  mt="7" colorScheme='red'  onClick={onClose}>Close</Button>
