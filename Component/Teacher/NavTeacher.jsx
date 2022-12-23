@@ -36,7 +36,7 @@ import {
 } from "react-icons/fi";
 import ForgotTeacher from "./ForgotTeacher";
 
-
+// import mi from "../../public/mi.jpeg"
 
 
 const LinkItems = [
@@ -94,7 +94,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between"  >
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          {/* <Image src={Logo} /> */}
+        <Image width={"90px"} src={"mi.jpeg"}  />
         </Text>
         <CloseButton
           display={{ base: "flex", md: "flex", lg: "none" }}
@@ -165,22 +165,22 @@ const MobileNav = ({ onOpen, ...rest }) => {
       
       </Text>
       <Heading style={{margin:"auto"}}  >Teachers Dashboard</Heading>
-      <Link href="/" style={{ textDecoration: "none" }}>
-        <Flex
+      <Flex
           align="center"
           p="2"
           mx="4"
           borderRadius="lg"
           role="group"
           cursor="pointer"
-          _hover={{
-            bg: "cyan.100",
-            color: "black",
-          }}
+         
         >
-          Home
+           <Link href="/" style={{ textDecoration: "none" }}>
+          <Box>  <Button>HOME</Button> </Box>
+          </Link>
+          <Link href="/blogs" style={{ textDecoration: "none" }}>
+          <Box marginLeft={"20px"}> <Button >BLOGS</Button></Box>
+          </Link>
         </Flex>
-      </Link>
     
 
       <HStack spacing={{ base: "0", md: "6" }}>
@@ -190,7 +190,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
           aria-label="open menu"
           icon={<FiBell />}
         />
-         <Button variant={"outline"} onClick={handleForgot}>
+         <Button variant={"outline"}  onClick={handleForgot}>
           Change Password
         </Button>
          {isForgotTeacher && (

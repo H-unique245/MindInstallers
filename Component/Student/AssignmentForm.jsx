@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import {
   IconButton,
   Avatar,
@@ -34,20 +34,23 @@ import {
   FiBell,
   FiChevronDown,
 } from "react-icons/fi";
+import Forgot from "../../pages/student/forgot";
 
 
+// import mi from "../../public/mi.jpeg"
 
 
 const LinkItems = [
-  { name: "Student List", icon: FiCompass, url: "/admin/student" },
-  { name: "Teacher List", icon: FiStar, url: "/admin/teacher" },
+  { name: "Assignments", icon: FiCompass, url: "/student" },
+  { name: "Student Details", icon: FiStar, url: "/student/card" },
 ];
 
-export default function TeacherNav({
+export default function AssignmentForm({
   children,
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+ 
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
@@ -92,7 +95,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between"  >
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          <Image src={'/mi.jpeg'} w='90px' alt='check' />
+        <Image width={"90px"} src={"mi.jpeg"}  />
         </Text>
         <CloseButton
           display={{ base: "flex", md: "flex", lg: "none" }}
@@ -126,6 +129,13 @@ const NavItem = ({ icon, children, url }) => {
 
 
 const MobileNav = ({ onOpen, ...rest }) => {
+    const [isForgot, setIsForgot] = useState(false);
+
+    const handleForgot = () => {
+        setIsForgot(true);
+        console.log(isForgot,"helo")
+    };
+
   return (
     <Flex
       ml={{ base: 0, md: 0, lg: 60 }}
@@ -155,8 +165,8 @@ const MobileNav = ({ onOpen, ...rest }) => {
     
       
       </Text>
-      <Heading style={{margin:"auto"}}  >Teachers Dashboard</Heading>
-      <Link href="/" style={{ textDecoration: "none" }}>
+      <Heading style={{margin:"auto"}}  >Student Dashboard</Heading>
+     
         <Flex
           align="center"
           p="2"
@@ -164,14 +174,17 @@ const MobileNav = ({ onOpen, ...rest }) => {
           borderRadius="lg"
           role="group"
           cursor="pointer"
-          _hover={{
-            bg: "cyan.100",
-            color: "black",
-          }}
+         
         >
-          Home
+           <Link href="/" style={{ textDecoration: "none" }}>
+          <Box>  <Button>HOME</Button> </Box>
+          </Link>
+          <Link href="/blogs" style={{ textDecoration: "none" }}>
+          <Box marginLeft={"20px"}> <Button >BLOGS</Button></Box>
+          </Link>
         </Flex>
-      </Link>
+       
+    
     
 
       <HStack spacing={{ base: "0", md: "6" }}>
@@ -181,62 +194,13 @@ const MobileNav = ({ onOpen, ...rest }) => {
           aria-label="open menu"
           icon={<FiBell />}
         />
-        <Flex alignItems={"center"}>
-          <Menu>
-            <MenuButton
-              py={2}
-              transition="all 0.3s"
-              _focus={{ boxShadow: "none" }}
-            >
-              <HStack>
-                <Avatar
-                  size={"sm"}
-                  src={
-                    "https://lh3.googleusercontent.com/a/AEdFTp4-Wx2-dbRzYqAaqPwMJUns1MeWeUdlVPQY-qI=s360-p-rw-no"
-                  }
-                />
-                <VStack
-                  display={{ base: "none", md: "flex" }}
-                  alignItems="flex-start"
-                  spacing="1px"
-                  ml="2"
-                >
-                  <Text fontSize="xs" color="gray.600">
-                  Admin
-                  </Text>
-                </VStack>
-                <Box display={{ base: "none", md: "flex" }}>
-                  <FiChevronDown />
-                </Box>
-              </HStack>
-            </MenuButton>
-            <MenuList
-              bg={useColorModeValue("white", "gray.900")}
-              borderColor={useColorModeValue("gray.200", "gray.700")}
-            >
-              <MenuItem>
-                <Link href="/" style={{ textDecoration: "none" }}>
-                Students List
-                </Link>
-              </MenuItem>
-              <MenuItem>
-             
-                <Link href="/" style={{ textDecoration: "none" }}>
-                Assignments
-                </Link>
-            
-              </MenuItem>
-
-              <MenuDivider />
-              <MenuItem>
-                <Link href="/" style={{ textDecoration: "none" }}>
-                  Sign Out
-                </Link>
-              </MenuItem>
-            </MenuList>
-          </Menu>
-        </Flex>
-      </HStack>
+        <Button variant={"outline"} onClick={handleForgot}>
+          Change Password
+        </Button>
+        {isForgot && (
+          <Forgot isFormOpen={isForgot} setIsFormOpen={setIsForgot} />
+        )}
+</HStack>
     </Flex>
   );
 };
