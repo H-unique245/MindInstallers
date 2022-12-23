@@ -166,7 +166,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
       
       </Text>
       <Heading style={{margin:"auto"}}  >Student Dashboard</Heading>
-      <Link href="/" style={{ textDecoration: "none" }}>
+     
         <Flex
           align="center"
           p="2"
@@ -174,14 +174,17 @@ const MobileNav = ({ onOpen, ...rest }) => {
           borderRadius="lg"
           role="group"
           cursor="pointer"
-          _hover={{
-            bg: "cyan.100",
-            color: "black",
-          }}
+         
         >
-          Home
+           <Link href="/" style={{ textDecoration: "none" }}>
+          <Box>  <Button>HOME</Button> </Box>
+          </Link>
+          <Link href="/blogs" style={{ textDecoration: "none" }}>
+          <Box marginLeft={"20px"}> <Button >BLOGS</Button></Box>
+          </Link>
         </Flex>
-      </Link>
+       
+    
     
 
       <HStack spacing={{ base: "0", md: "6" }}>
