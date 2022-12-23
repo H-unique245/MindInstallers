@@ -76,7 +76,7 @@ __
 
    - ###Dashboard 
 <img src="https://i.imgur.com/F0BI1qZ.jpg" alt="dashboard" />
-<img src="https://i.imgur.com/F0BI1qZ.jpg" alt="dashboard" />
+<img src="https://i.imgur.com/NqMsUuR.jpg" alt="dashboard" />
 
     - ###Admin Page 
 <img src="https://i.imgur.com/4D64eel.png" alt="AD" />
