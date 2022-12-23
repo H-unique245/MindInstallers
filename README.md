@@ -1,6 +1,6 @@
 ### SCHOOL MANAGEMENT SYSTEM
   
-# Mind Installers [FitFinity]
+# Mind Installers [MLG]
 
 
 * [Click Here](https://mindinstaller.vercel.app/) to view the deployed website.
@@ -15,7 +15,7 @@ ___
  <ul>
         <li><a href="https://github.com/pravin0428">Pravin Mohite</a></li>
         <li> <a href="https://github.com/H-unique245">Hemant Aher</a> </li>
-        <li><a href="https://github.com/kedar05121998/kedar05121998">Kedar Pathak</a></li>
+        <li><a href="https://github.com/kedar05121998">Kedar Pathak</a></li>
         <li><a href="https://github.com/bishal00sharma">Bishal Sharma</a></li>
         
   </ul>
@@ -83,10 +83,5 @@ __
 <img src="https://i.imgur.com/vuv8e5E.png" alt="AT" /> 
 <img src="https://i.imgur.com/yA21DPZ.png" alt="AS" /> 
  
-
- 
-
-
-
 
 

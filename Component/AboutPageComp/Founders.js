@@ -15,50 +15,54 @@ import {
 import { useRouter } from "next/router";
 export default function SocialProfileSimple() {
   const router = useRouter();
-  const handleRoute = () => {
-    router.push("https://pravin0428.github.io/");
+  const handleRoute = (git) => {
+   router.push(git);
   };
 
   const founders = [
     {
       bgImg:
         "https://discover-georgiasouthern-edu.cdn.technolutions.net/www/images/banner-photo.jpg",
-      avatar: "portfolio_img.jpeg",
+      avatar: "PM-I.jpeg",
       name: "Pravin Mohite",
       Email: "mohite@gmail.com",
       story:
         "Founder of this web application",
       connect: "https://pravin0428.github.io/",
+      follow : "https://github.com/pravin0428"
     },
     {
       bgImg:
         "https://discover-georgiasouthern-edu.cdn.technolutions.net/www/images/banner-photo.jpg",
-      avatar: "portfolio_img.jpeg",
-      name: "Hemant Ahire",
+      avatar: "HA.jpeg",
+      name: "Hemant Aher",
       Email: "hemant@gmail.com",
       story:
         "Founder of this web application",
-      connect: "https://pravin0428.github.io/",
+      connect: "https://H-unique245.github.io/",
+      follow : "https://github.com/H-unique245"
     },
     {
       bgImg:
         "https://discover-georgiasouthern-edu.cdn.technolutions.net/www/images/banner-photo.jpg",
-      avatar: "portfolio_img.jpeg",
+      avatar: "kp.jpeg",
       name: "Kedar Pathak",
       Email: "kedar@gmail.com",
       story:
         "Founder of this web application",
-      connect: "https://pravin0428.github.io/",
+      connect: "https://kedar05121998.github.io/",
+      follow : "https://github.com/kedar05121998/kedar05121998"
     },
     {
       bgImg:
         "https://discover-georgiasouthern-edu.cdn.technolutions.net/www/images/banner-photo.jpg",
-      avatar: "portfolio_img.jpeg",
+      avatar: "bishal-git.png",
       name: "Bishal Sharma",
       Email: "bishal@gmail.com",
       story:
         "Founder of this web application",
-      connect: "https://pravin0428.github.io/",
+      connect: "https://bishal00sharma.github.io/",
+      follow : "https://github.com/bishal00sharma"
     },
   ];
 
@@ -159,7 +163,7 @@ export default function SocialProfileSimple() {
                   Message
                 </Button>
                 <Button
-                  onClick={handleRoute}
+                  onClick={()=> handleRoute(elem.follow)}
                   flex={1}
                   fontSize={"sm"}
                   rounded={"full"}

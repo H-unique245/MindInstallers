@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function SignUp() {
   const initialState = {
@@ -76,14 +77,15 @@ export default function SignUp() {
   }
 
   return (
-    <Box w="50%" m="auto">
+    
+    <Box w="50%" m="auto"  mb="30px"  boxShadow='lg' p='6' rounded='md' bg='white' mt="30px">
       <VStack spacing={10} align="stretch">
         <Heading textAlign="center" color="teal">
           Sign Up
         </Heading>
         <hr />
         <Stack direction={["column", "column", "row"]} spacing="120px">
-          <Box w={["100%", "90%", "50%"]} m="auto" textAlign="center">
+          <Box w={["100%", "90%", "50%"]} m="auto" textAlign="center"  >
             <VStack spacing={10} align="stretch">
               <Input
                 type="text"
@@ -141,6 +143,11 @@ export default function SignUp() {
           </Button>
         </Box>
       </VStack>
+      <br />
+      <Text textAlign="center">Already have an account?  <Link href="login">Login</Link></Text>
+      
+     
+
     </Box>
   );
 }

@@ -6,6 +6,7 @@ import {
   VStack,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 function HeroSection() {
   return (
@@ -43,14 +44,7 @@ function HeroSection() {
           </Text>
           <ln />
           <Stack direction={"row"}>
-            <Button
-              bg={"blue.400"}
-              rounded={"full"}
-              color={"white"}
-              _hover={{ bg: "blue.500" }}
-            >
-              Show me more
-            </Button>
+            <Link href="/about" >
             <Button
               bg={"whiteAlpha.300"}
               rounded={"full"}
@@ -59,6 +53,9 @@ function HeroSection() {
             >
               Show me more
             </Button>
+            </Link>
+
+             
           </Stack>
         </Stack>
       </VStack>
