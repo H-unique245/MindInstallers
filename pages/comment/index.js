@@ -1,29 +1,52 @@
-import { useEffect } from 'react'
-import io from 'socket.io-client'
+import { Box, Button } from '@chakra-ui/react';
+import { useEffect, useState } from 'react'
+import io from 'Socket.IO-client'
+let socket;
 
-export default () => {
-  useEffect(() => {
-    fetch('/api/socketio').finally(() => {
-      const socket = io()
+const Comment = () => {
+  const [input, setInput] = useState('')
+const [data,setData]= useState([]);
+  useEffect(() =>{ 
+    socketInitializer()
+  }, [])
 
-      socket.on('connect', () => {
-        console.log('connect')
-        socket.emit('hello')
-      })
+  const socketInitializer = async () => {
+    await fetch('/api/socket');
+    socket = io()
 
-      socket.on('hello', data => {
-        console.log('hello', data)
-      })
-
-      socket.on('a user connected', () => {
-        console.log('a user connected')
-      })
-
-      socket.on('disconnect', () => {
-        console.log('disconnect')
-      })
+    socket.on('connect', () => {
+      console.log('connected')
     })
-  }, []) // Added [] as useEffect filter so it will be executed only once, when component is mounted
 
-  return <h1>Socket.io</h1>
+    socket.on('update-input', msg => {
+      // setInput(msg)
+      setData((prev)=>([...prev,msg]))
+      console.log(data)
+    })
+  }
+
+  const onChangeHandler = (e) => {
+    setInput(e.target.value)
+  }
+  
+  const handleText=()=>{
+    socket.emit('input-change',input)
+
+  }
+  return (
+  <Box h="200px" overflow={'scroll'}>  <input
+      placeholder="Type something"
+      value={input}
+      onChange={onChangeHandler}
+    /><Button onClick={handleText}> Add Comment</Button>
+   <div>
+    {data.map((el,i)=>
+    <div key={el+i}>{el}</div>
+    )
+    }
+   </div>
+  </Box>
+  )
 }
+
+export default Comment;

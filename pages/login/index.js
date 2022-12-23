@@ -85,7 +85,7 @@ export default function SignIn() {
           } else if (myDecodedToken.role == "teacher") {
             router.push("/teacher");
           } else if (myDecodedToken.role == "admin") {
-            router.push("/");
+            router.push("/admin/student");
           }
         }, 1000);
       }
