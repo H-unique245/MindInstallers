@@ -14,6 +14,7 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  border,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -55,12 +56,12 @@ export default function Navbar(){
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
+          <Link href='/'
             textAlign={{ base: 'center', md: 'left' }}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
             <img style={{width : "65px" , marginTop : "-10px"}} src="mi.jpeg" />
-          </Text>
+          </Link>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
@@ -77,8 +78,8 @@ export default function Navbar(){
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
-            href={'#'}>
-            Sign In
+            href={'/login'}>
+            Login
           </Button>
           <Link href='/signup' >
           <Button
@@ -86,10 +87,13 @@ export default function Navbar(){
             fontSize={'sm'}
             fontWeight={600}
             color={'white'}
-            bg={'pink.400'}
+            bg={"rgb(57, 57, 245)"}
             href={'#'}
             _hover={{
-              bg: 'pink.300',
+              bg: 'white',
+              color : "rgb(57, 57, 245)" ,
+              border : "1px solid rgb(57, 57, 245)",
+              textDecoration : "none"
             }}>
             Sign Up
           </Button>
@@ -219,8 +223,10 @@ const MobileNavItem = ({ label, children, href }) => {
           textDecoration: 'none',
         }}>
         <Text
+        
           fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}>
+        color={useColorModeValue('gray.600', 'gray.200')}
+          >
           {label}
         </Text>
         {children && (
@@ -297,8 +303,8 @@ const NAV_ITEMS = [
     href: '/about',
   },
   {
-    label: 'Courses',
-    href: '#',
+    label: 'Blogs',
+    href: '/blogs',
   },
 ]
 

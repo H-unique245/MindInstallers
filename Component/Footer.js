@@ -59,10 +59,9 @@ function Footer() {
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={'flex-start'}>
             <ListHeader>Company</ListHeader>
-            <Link href={'#'}>About Us</Link>
-            <Link href={'#'}>Blog</Link>
-            <Link href={'#'}>Careers</Link>
-            <Link href={'#'}>Contact Us</Link>
+            <Link href={'/about'}>About Us</Link>
+            <Link href={'/blogs'}>Blog</Link>
+            <Link href={'/about'}>Contact Us</Link>
           </Stack>
 
           <Stack align={'flex-start'}>
@@ -102,13 +101,13 @@ function Footer() {
           align={{ md: 'center' }}>
           <Text>Follow us on social media</Text>
           <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} href={'#'}>
+            <SocialButton  label={'Twitter'} href={'https://twitter.com/KedarPa05506955'}>
               <FaTwitter />
             </SocialButton>
-            <SocialButton label={'YouTube'} href={'#'}>
+            <SocialButton label={'YouTube'} href={'https://www.youtube.com/channel/UCPlDjgB1OxXVQ6lr-sRug2Q'}>
               <FaYoutube />
             </SocialButton>
-            <SocialButton label={'Instagram'} href={'#'}>
+            <SocialButton label={'Instagram'} href={'https://www.instagram.com/engg_pravin_mohite/?igshid=uoi5eh7t1mgg'}>
               <FaInstagram />
             </SocialButton>
           </Stack>

@@ -16,6 +16,7 @@ import {
 import { isExpired, decodeToken } from "react-jwt";
 import { useRouter } from "next/navigation";
 import SpinnerLoading from "../../Component/Loading";
+import Link from "next/link";
 
 export default function SignIn() {
   const initialState = {
@@ -102,10 +103,10 @@ export default function SignIn() {
   }, []);
 
   return (
-    <Box>
+    <Box pb="30px"    >
       {loading && <SpinnerLoading />}
       {!loading && (
-        <Box w="50%" m="auto">
+        <Box w="50%" m="auto"  boxShadow='lg' p='6' rounded='md' bg='white' mt="30px" >
           <VStack spacing={10} align="stretch">
             <Heading textAlign="center" color="teal">
               Sign In
@@ -149,7 +150,11 @@ export default function SignIn() {
               </form>
             </Box>
           </VStack>
+             <br /> 
+            
+           <Text textAlign="center">Click Here To Create Account -- <Link href="signup">Signup</Link></Text>
         </Box>
+        
       )}
     </Box>
   );

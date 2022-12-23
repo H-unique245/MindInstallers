@@ -10,6 +10,7 @@ import {
   Heading,
   Button,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 const data = [
   {
@@ -27,8 +28,15 @@ const data = [
 ];
 
 function Profesion() {
+
+  const rourer = useRouter()
+
+  const handleClick = () =>{
+    rourer.push("/signup")
+  }
+
   return (
-    <Box p={4} border="2px solid white">
+    <Box p={4}  boxShadow='lg'  rounded='md' bg='white'>
       <SimpleGrid
         columns={{ base: 1, md: 1, lg: 2 }}
         spacing={10}
@@ -57,14 +65,14 @@ function Profesion() {
 
             <Stack>
               <CardBody>
-                <Heading size="lg">{elem.title}</Heading>
+                <Heading size="lg" >{elem.title}</Heading>
 
                 <Text
                   marginTop="25px"
                   //  border="1px solid red"
                   fontSize="20px"
                   py="2"
-                  color="white"
+                  
                 >
                   {elem.dis}
                 </Text>
@@ -72,6 +80,7 @@ function Profesion() {
 
               <CardFooter>
                 <Button
+                onClick={handleClick}
                   variant="solid"
                   backgroundColor="#ff5722"
                   color="white"
