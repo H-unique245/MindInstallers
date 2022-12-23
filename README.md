@@ -60,7 +60,7 @@ __
 
 
    - ###Blogs 
-<img src="https://i.imgur.com/S9vddUS.png" alt="blogs" />
+<img src="https://i.imgur.com/ooW9LJY.png" alt="blogs" />
 
 
    - ###Login 
