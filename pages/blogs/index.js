@@ -2,6 +2,7 @@ import { Box, Heading, SimpleGrid, VStack } from '@chakra-ui/react';
 import React from 'react'
 import BlogCard from '../../Component/Blog/BlogCard'
 import CommentList from '../../Component/Blog/CommentList';
+import Footer from '../../Component/Footer';
 import Navbar from '../../Component/Navabar';
 import Comment from '../comment';
 
@@ -24,6 +25,7 @@ function Blogs({data}) {
     }
 
     </SimpleGrid>
+    <Footer />
     </>
   )
 }

@@ -22,10 +22,8 @@ import {
   Image,
   Heading,
   Button,
-
- 
 } from "@chakra-ui/react";
-import Link from 'next/link'
+import Link from "next/link";
 
 import {
   FiCompass,
@@ -36,21 +34,18 @@ import {
 } from "react-icons/fi";
 
 import Forgot from "../../pages/student/forgot";
+import Footer from "../Footer";
 
 // import mi from "../../public/mi.jpeg"
 
-
 const LinkItems = [
-    { name: "Assignments", icon: FiCompass, url: "/student" },
-    { name: "Student Details", icon: FiStar, url: "/student/card" },
+  { name: "Assignments", icon: FiCompass, url: "/student" },
+  { name: "Student Details", icon: FiStar, url: "/student/card" },
 ];
 
-export default function StudentCard({
-  children,
-}) {
+export default function StudentCard({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
- 
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
@@ -75,11 +70,12 @@ export default function StudentCard({
       <Box ml={{ base: 0, md: 0, lg: 60 }} p="4">
         {children}
       </Box>
+      <Box ml={60}>
+        <Footer />
+      </Box>
     </Box>
   );
 }
-
-
 
 const SidebarContent = ({ onClose, ...rest }) => {
   return (
@@ -93,9 +89,9 @@ const SidebarContent = ({ onClose, ...rest }) => {
       h="full"
       {...rest}
     >
-      <Flex h="20" alignItems="center" mx="8" justifyContent="space-between"  >
+      <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-        <Image width={"90px"} src={"/mi.jpeg"}  />
+          <Image width={"90px"} src={"/mi.jpeg"} />
         </Text>
         <CloseButton
           display={{ base: "flex", md: "flex", lg: "none" }}
@@ -103,14 +99,13 @@ const SidebarContent = ({ onClose, ...rest }) => {
         />
       </Flex>
       {LinkItems.map((link, index) => (
-        <NavItem url={link.url} key={index} icon={link.icon}> 
+        <NavItem url={link.url} key={index} icon={link.icon}>
           {link.name}
         </NavItem>
       ))}
     </Box>
   );
 };
-
 
 const NavItem = ({ icon, children, url }) => {
   return (
@@ -127,14 +122,13 @@ const NavItem = ({ icon, children, url }) => {
   );
 };
 
-
 const MobileNav = ({ onOpen, ...rest }) => {
-    const [isForgot, setIsForgot] = useState(false);
+  const [isForgot, setIsForgot] = useState(false);
 
-    const handleForgot = () => {
-        setIsForgot(true);
-        console.log(isForgot,"helo")
-    };
+  const handleForgot = () => {
+    setIsForgot(true);
+    console.log(isForgot, "helo");
+  };
   return (
     <Flex
       ml={{ base: 0, md: 0, lg: 60 }}
@@ -160,28 +154,29 @@ const MobileNav = ({ onOpen, ...rest }) => {
         fontSize="2xl"
         fontFamily="monospace"
         fontWeight="bold"
-      >
-    
-      
-      </Text>
-      <Heading style={{margin:"auto"}}  >Student Dashboard</Heading>
+      ></Text>
+      <Heading style={{ margin: "auto" }}>Student Dashboard</Heading>
       <Flex
-          align="center"
-          p="2"
-          mx="4"
-          borderRadius="lg"
-          role="group"
-          cursor="pointer"
-         
-        >
-           <Link href="/" style={{ textDecoration: "none" }}>
-          <Box>  <Button>HOME</Button> </Box>
-          </Link>
-          <Link href="/blogs" style={{ textDecoration: "none" }}>
-          <Box marginLeft={"20px"}> <Button >BLOGS</Button></Box>
-          </Link>
-        </Flex>
-    
+        align="center"
+        p="2"
+        mx="4"
+        borderRadius="lg"
+        role="group"
+        cursor="pointer"
+      >
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <Box>
+            {" "}
+            <Button>HOME</Button>{" "}
+          </Box>
+        </Link>
+        <Link href="/blogs" style={{ textDecoration: "none" }}>
+          <Box marginLeft={"20px"}>
+            {" "}
+            <Button>BLOGS</Button>
+          </Box>
+        </Link>
+      </Flex>
 
       <HStack spacing={{ base: "0", md: "6" }}>
         <IconButton
@@ -196,7 +191,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
         {isForgot && (
           <Forgot isFormOpen={isForgot} setIsFormOpen={setIsForgot} />
         )}
-</HStack>
+      </HStack>
     </Flex>
   );
 };

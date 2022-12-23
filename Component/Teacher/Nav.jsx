@@ -35,6 +35,7 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 import ForgotTeacher from "./ForgotTeacher";
+import Footer from "../Footer";
 
 
 
@@ -72,6 +73,9 @@ export default function Nav({
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 0, lg: 60 }} p="4">
         {children}
+      </Box>
+      <Box ml={60}>
+        <Footer />
       </Box>
     </Box>
   );

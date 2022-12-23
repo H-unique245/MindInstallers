@@ -25,7 +25,7 @@ export default function SocialProfileSimple() {
         "https://discover-georgiasouthern-edu.cdn.technolutions.net/www/images/banner-photo.jpg",
       avatar: "PM-I.jpeg",
       name: "Pravin Mohite",
-      Email: "mohite@gmail.com",
+      Email: "mohite461998@gmail.com",
       story:
         "Founder of this web application",
       connect: "https://pravin0428.github.io/",
@@ -36,7 +36,7 @@ export default function SocialProfileSimple() {
         "https://discover-georgiasouthern-edu.cdn.technolutions.net/www/images/banner-photo.jpg",
       avatar: "HA.jpeg",
       name: "Hemant Aher",
-      Email: "hemant@gmail.com",
+      Email: "a.hemant96@gmail.com",
       story:
         "Founder of this web application",
       connect: "https://H-unique245.github.io/",
@@ -47,7 +47,7 @@ export default function SocialProfileSimple() {
         "https://discover-georgiasouthern-edu.cdn.technolutions.net/www/images/banner-photo.jpg",
       avatar: "kp.jpeg",
       name: "Kedar Pathak",
-      Email: "kedar@gmail.com",
+      Email: "kedarpathak0873@gmail.com",
       story:
         "Founder of this web application",
       connect: "https://kedar05121998.github.io/",
@@ -58,7 +58,7 @@ export default function SocialProfileSimple() {
         "https://discover-georgiasouthern-edu.cdn.technolutions.net/www/images/banner-photo.jpg",
       avatar: "bishal-git.png",
       name: "Bishal Sharma",
-      Email: "bishal@gmail.com",
+      Email: "bishalsharmaece@gmail.com",
       story:
         "Founder of this web application",
       connect: "https://bishal00sharma.github.io/",
@@ -159,6 +159,7 @@ export default function SocialProfileSimple() {
                   _focus={{
                     bg: "gray.200",
                   }}
+                  onClick={()=> handleRoute('/blogs')}
                 >
                   Message
                 </Button>

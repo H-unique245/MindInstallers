@@ -3,6 +3,7 @@ import HeroSection from "../Component/HomePageComp/HeroSection";
 import { Box , Text } from "@chakra-ui/react";
 import Profesion from "../Component/HomePageComp/Profesion";
 import OurStudents from "../Component/HomePageComp/OurStudents";
+import Footer from "../Component/Footer";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       textShadow="4px 7px 7px black"
        fontSize="30px" color="white" fontWeight="bold" >What our students have to say</Text>
         <OurStudents/>
+        <Footer />
       </Box>
     </>
   );

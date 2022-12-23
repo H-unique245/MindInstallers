@@ -2,6 +2,7 @@ import { Box ,Input,useColorModeValue} from '@chakra-ui/react'
 import axios from 'axios'
 import React, { useState } from 'react'
 import AboutMain from '../Component/AboutPageComp/AboutMain'
+import Footer from '../Component/Footer'
 import Navbar from '../Component/Navabar'
 
 
@@ -59,7 +60,7 @@ function about() {
      <Input name="email" value={review.email} type="text"  placeholder="Add Comments" onChange={handleChange} />
      <Input type="submit" />
      </form> */}
-    
+    <Footer />
 
     </>
   
