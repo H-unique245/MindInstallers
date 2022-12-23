@@ -34,17 +34,18 @@ import {
   FiBell,
   FiChevronDown,
 } from "react-icons/fi";
-import ForgotTeacher from "./ForgotTeacher";
+import Forgot from "../../pages/student/forgot";
+
 
 // import mi from "../../public/mi.jpeg"
 
 
 const LinkItems = [
-  { name: "Assignments", icon: FiCompass, url: "/teacher" },
-  { name: "Student List", icon: FiStar, url: "/teacher/teach" },
+  { name: "Assignments", icon: FiCompass, url: "/student" },
+  { name: "Student Details", icon: FiStar, url: "/student/card" },
 ];
 
-export default function NavTeacher({
+export default function AssignmentForm({
   children,
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -128,12 +129,12 @@ const NavItem = ({ icon, children, url }) => {
 
 
 const MobileNav = ({ onOpen, ...rest }) => {
-  const [isForgotTeacher, setIsForgotTeacher] = useState(false);
+    const [isForgot, setIsForgot] = useState(false);
 
-  const handleForgot = () => {
-    setIsForgotTeacher(true);
-      console.log(isForgotTeacher,"helo")
-  };
+    const handleForgot = () => {
+        setIsForgot(true);
+        console.log(isForgot,"helo")
+    };
 
   return (
     <Flex
@@ -164,8 +165,9 @@ const MobileNav = ({ onOpen, ...rest }) => {
     
       
       </Text>
-      <Heading style={{margin:"auto"}}  >Teachers Dashboard</Heading>
-      <Flex
+      <Heading style={{margin:"auto"}}  >Student Dashboard</Heading>
+     
+        <Flex
           align="center"
           p="2"
           mx="4"
@@ -181,6 +183,8 @@ const MobileNav = ({ onOpen, ...rest }) => {
           <Box marginLeft={"20px"}> <Button >BLOGS</Button></Box>
           </Link>
         </Flex>
+       
+    
     
 
       <HStack spacing={{ base: "0", md: "6" }}>
@@ -190,11 +194,11 @@ const MobileNav = ({ onOpen, ...rest }) => {
           aria-label="open menu"
           icon={<FiBell />}
         />
-         <Button variant={"outline"}  onClick={handleForgot}>
+        <Button variant={"outline"} onClick={handleForgot}>
           Change Password
         </Button>
-         {isForgotTeacher && (
-          <ForgotTeacher isFormOpen={isForgotTeacher} setIsFormOpen={setIsForgotTeacher} />
+        {isForgot && (
+          <Forgot isFormOpen={isForgot} setIsFormOpen={setIsForgot} />
         )}
 </HStack>
     </Flex>

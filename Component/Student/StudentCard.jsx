@@ -34,17 +34,18 @@ import {
   FiBell,
   FiChevronDown,
 } from "react-icons/fi";
-import ForgotTeacher from "./ForgotTeacher";
+
+import Forgot from "../../pages/student/forgot";
 
 // import mi from "../../public/mi.jpeg"
 
 
 const LinkItems = [
-  { name: "Assignments", icon: FiCompass, url: "/teacher" },
-  { name: "Student List", icon: FiStar, url: "/teacher/teach" },
+    { name: "Assignments", icon: FiCompass, url: "/student" },
+    { name: "Student Details", icon: FiStar, url: "/student/card" },
 ];
 
-export default function NavTeacher({
+export default function StudentCard({
   children,
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -94,7 +95,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between"  >
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-        <Image width={"90px"} src={"mi.jpeg"}  />
+        <Image width={"90px"} src={"/mi.jpeg"}  />
         </Text>
         <CloseButton
           display={{ base: "flex", md: "flex", lg: "none" }}
@@ -128,13 +129,12 @@ const NavItem = ({ icon, children, url }) => {
 
 
 const MobileNav = ({ onOpen, ...rest }) => {
-  const [isForgotTeacher, setIsForgotTeacher] = useState(false);
+    const [isForgot, setIsForgot] = useState(false);
 
-  const handleForgot = () => {
-    setIsForgotTeacher(true);
-      console.log(isForgotTeacher,"helo")
-  };
-
+    const handleForgot = () => {
+        setIsForgot(true);
+        console.log(isForgot,"helo")
+    };
   return (
     <Flex
       ml={{ base: 0, md: 0, lg: 60 }}
@@ -164,7 +164,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
     
       
       </Text>
-      <Heading style={{margin:"auto"}}  >Teachers Dashboard</Heading>
+      <Heading style={{margin:"auto"}}  >Student Dashboard</Heading>
       <Flex
           align="center"
           p="2"
@@ -190,11 +190,11 @@ const MobileNav = ({ onOpen, ...rest }) => {
           aria-label="open menu"
           icon={<FiBell />}
         />
-         <Button variant={"outline"}  onClick={handleForgot}>
+        <Button variant={"outline"} onClick={handleForgot}>
           Change Password
         </Button>
-         {isForgotTeacher && (
-          <ForgotTeacher isFormOpen={isForgotTeacher} setIsFormOpen={setIsForgotTeacher} />
+        {isForgot && (
+          <Forgot isFormOpen={isForgot} setIsFormOpen={setIsForgot} />
         )}
 </HStack>
     </Flex>
