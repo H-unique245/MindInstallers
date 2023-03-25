@@ -3,7 +3,7 @@
 # Mind Installers [MLG]
 
 
-* [Click Here](https://mindinstaller.vercel.app/) to view the deployed website.
+* [Click Here](https://hackathon-sms.vercel.app/) to view the deployed website.
  <p align="center"><img  width="200" src="https://i.imgur.com/JQsf7ms.jpg"/img> </p>
 <p>
  This is a competitive application created for the Masai Hackathon program. This SAAS web application is all about education platforms.
